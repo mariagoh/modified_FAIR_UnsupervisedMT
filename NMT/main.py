@@ -227,7 +227,7 @@ parser.add_argument("--length_penalty", type=float, default=1.0,
                     help="Length penalty: <1.0 favors shorter, >1.0 favors longer sentences")
 params = parser.parse_args()
 
-# changed it: I have to use 512 as latent dimension, I put is on assertion imposing it to check if compressing along the right dimension
+# changed it: I have to use 512 as latent dimension, I added an assertion imposing it to check if operating along the right dimension
 
 if __name__ == '__main__':
 
