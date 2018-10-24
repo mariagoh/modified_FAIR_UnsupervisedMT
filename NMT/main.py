@@ -194,9 +194,9 @@ parser.add_argument("--dis_optimizer", type=str, default="rmsprop,lr=0.0005",
                     help="Discriminator optimizer (SGD / RMSprop / Adam, etc.)")
 parser.add_argument("--clip_grad_norm", type=float, default=5,
                     help="Clip gradients norm (0 to disable)")
-parser.add_argument("--epoch_size", type=int, default=100000,
+parser.add_argument("--epoch_size", type=int, default=1000,   # changed it (it was 100000)
                     help="Epoch size / evaluation frequency")
-parser.add_argument("--max_epoch", type=int, default=100000,
+parser.add_argument("--max_epoch", type=int, default=1000,    # changed it (it was 100000)
                     help="Maximum epoch size")
 parser.add_argument("--stopping_criterion", type=str, default="",
                     help="Stopping criterion, and number of non-increase before stopping the experiment")
