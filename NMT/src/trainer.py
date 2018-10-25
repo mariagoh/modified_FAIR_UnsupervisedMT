@@ -675,7 +675,7 @@ class TrainerMT(MultiprocessingEventLoop):
 
         #if backprop_temperature == -1:
         scores = self.decoder(encoded_1, sent2[:-1], lang_id=lang2_id)          # changed it
-        scores = norm_.re_max(scores, -1)   # to do: define the function, check it works and it's fast (I don't like softmax, I think it's not good for gradient descent)
+        scores = re_max(scores, -1)   # to do: check the function works and it's fast (I don't like softmax, I think it's not good for gradient descent)
         bos = torch.cuda.FloatTensor(1, bs, n_words2).zero_()
         bos[0, :, params.bos_index[lang2_id]] = 1
         sent2_input = torch.cat([bos, scores], 0)
